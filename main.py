@@ -18,11 +18,13 @@ async def change_status():
         t = time.gmtime()
         Heure = time.strftime("%H", t)
         Min = time.strftime("%M", t)
-        horaire=str(int(Heure)+1)
+        horaire = "⏲"
+        horaire+=str(int(Heure)+1)
         horaire+=":"
         horaire+=Min
         horaire += ":"
         horaire += time.strftime("%S", t)
+        horaire += "⏲"
         await client.change_presence(activity=discord.Game(name=horaire))
         await asyncio.sleep(5)
 
